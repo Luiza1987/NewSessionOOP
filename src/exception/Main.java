@@ -46,9 +46,6 @@ public class Main {
             System.out.println("Ошибка: введите числовые значения.");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-        } finally {
-            scanner.close();
         }
-
     }
 }
