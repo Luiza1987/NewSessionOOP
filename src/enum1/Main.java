@@ -3,7 +3,7 @@ package enum1;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         //ClassWork
 //        for (Oblast oblast : Oblast.values()) {
 //            System.out.println(oblast + ": " + oblast.getDescription());
@@ -77,6 +77,8 @@ public class Main {
 //                System.out.println("Жекшемби куну эс алам.");
 //                break;
 //        }
+
+
     }
 
 }
