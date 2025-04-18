@@ -8,17 +8,23 @@ public class Agency {
     private String name;
     private String address;
     private LocalDate foundationDate;
-    private House [] houses = new House[10];
+    private House [] houses;
     private Customer [] customers = new Customer[10];
 
     public Agency() {
+        for (int i = 0; i < houses.length; i++) {
+//            houses[i] = new House(1, "Agency", "Vostok5", LocalDate.of(2000, 2, 2)); // создаем объекты House
+        }
+
     }
 
-    public Agency(long id, String name, String address, LocalDate foundationDate, House[] houses, Customer[] customers) {
+    public Agency(long id, String name, String address, LocalDate foundationDate,
+                  House[]houses , Customer[] customers) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.foundationDate = foundationDate;
+        this.houses = new House[5];
         this.houses = houses;
         this.customers = customers;
     }
@@ -28,6 +34,7 @@ public class Agency {
         this.name = name;
         this.address = address;
         this.foundationDate = foundationDate;
+        houses = new House[10];
     }
 
     public long getId() {
@@ -85,7 +92,7 @@ public class Agency {
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", foundationDate=" + foundationDate +
-                ", houses=" + Arrays.toString(houses) +
+//                ", houses=" + Arrays.toString(houses) +
                 ", customers=" + Arrays.toString(customers) +
                 '}';
     }

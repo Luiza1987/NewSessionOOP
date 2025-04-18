@@ -78,7 +78,29 @@ public class Main {
 //                break;
 //        }
 
+        //Classwork
+        Scanner scanner = new Scanner(System.in);
 
+        Card card = new Card("Luiza", "Zakirova", "1234-5678-1234-5678",
+                500, "1234");
+        Product apple = new Product("Apple", 100);
+        Product milk = new Product("Milk", 120);
+        Product bread = new Product("Bread", 40);
+        Basket basket = new Basket(new Product[]{apple, milk, bread});
+        Client client = new Client("Luiza", "Zakirova", 38, card, basket);
+
+        double totalAmount = basket.getTotalPrice();
+        System.out.println("Кош келиниз!");
+
+        if (totalAmount > 100) {
+            System.out.print("Паролду киргизиниз: ");
+            String inputPassword = scanner.nextLine();
+            if (!inputPassword.equals(card.getPassword())) {
+                System.out.println("Туура эмес пароль!");
+                return;
+            }
+        }
+        client.payWithCard(totalAmount);
     }
-
 }
+

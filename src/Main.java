@@ -26,9 +26,8 @@ public class Main {
                 2, 2)));
 
         // Добавление дома в агентство
-        House house = new House(2, "Asanbay 5 St. 12", 50000, 3, HouseType.VILLA,
-                false, "Kyrgyzstan");
-        houseService.addHouseToAgency(1, house);
+       houseService.addHouseToAgency(new House(2, "Asanbay 5 St. 12", 50000, 3, HouseType.VILLA,
+                false, "Kyrgyzstan"));
 
         //выбор действий
         Scanner scanner = new Scanner(System.in);
@@ -86,7 +85,7 @@ public class Main {
                     System.out.print("Введите страну дома: ");
                     String country = scanner.nextLine();
                     House newHouse = new House(2, address, price, rooms, HouseType.VILLA, false, country);
-                    houseService.addHouseToAgency(agencyIdForHouse, newHouse);
+                    houseService.addHouseToAgency(newHouse);
                     System.out.println("Дом успешно добавлен.");
                     break;
 
@@ -144,5 +143,6 @@ public class Main {
                 }
             }
         }
-    }
+
+        }
 }

@@ -1,28 +1,26 @@
 package enum1;
 
+import java.util.Arrays;
+
 public class Basket {
-    Product[] products; //Massiv productov
-    int count; // Kolichestvo produktov
+    private Product[] products;
 
-    //Constructor
-    public Basket() {
-        this.products = new Product[10]; // max 10 tovarov
-        this.count = 0;
+    public Basket(Product[] products) {
+        this.products = products;
     }
 
-    // metod dobavlenie tovara
-    public void addProduct(Product product) {
-        if (count < products.length) {
-            products[count++] = product;
-        }
-    }
-
-    //vycheslenie tovara
     public double getTotalPrice() {
-        double total = 0;
-        for (int i = 0; i < count; i++) {
-            total += products[i].price;
-        }
-        return total;
+        return Arrays.stream(products).mapToDouble(Product::getPrice).sum();
+    }
+
+    public Product[] getProducts() {
+        return products;
+    }
+
+    @Override
+    public String toString() {
+        return "Basket{" +
+                "products=" + Arrays.toString(products) +
+                '}';
     }
 }

@@ -10,12 +10,17 @@ public class HouseServiceImpl implements HouseService {
     // Реализация других методов
 
     @Override
-    public String addHouseToAgency(long agencyId, House house) {
+    public String addHouseToAgency(House house) {
         return "";
     }
 
     @Override
     public House getHouseById(long id) {
+        return null;
+    }
+
+    @Override
+    public House getAllHouse() {
         return null;
     }
 
@@ -60,6 +65,11 @@ public class HouseServiceImpl implements HouseService {
 
         // Возвращаем массив с отфильтрованными домами
         return filteredHouses;
+    }
+
+    @Override
+    public void addHouse(House kyrgyzstan) {
+
     }
 
 }

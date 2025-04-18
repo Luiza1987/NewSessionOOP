@@ -4,6 +4,8 @@ package models;
 
 import enums.HouseType;
 
+import java.time.LocalDate;
+
 public class House {
     private long id;
     private String address;
@@ -13,7 +15,9 @@ public class House {
     private boolean isBooked;
     private String country;
 
-    public House() {}
+    public House(int i, String agency, String vostok5, LocalDate localDate) {
+
+    }
 
     public House(long id, String address, int price, int room, HouseType houseType, boolean isBooked, String country) {
         this.id = id;
@@ -23,6 +27,9 @@ public class House {
         this.houseType = houseType;
         this.isBooked = isBooked;
         this.country = country;
+    }
+
+    public House() {
     }
 
     public long getId() {

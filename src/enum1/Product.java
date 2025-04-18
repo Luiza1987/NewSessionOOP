@@ -2,7 +2,7 @@ package enum1;
 
 public class Product {
     private String productName;
-    double price;
+    private double price;
 
     public Product() {
     }
